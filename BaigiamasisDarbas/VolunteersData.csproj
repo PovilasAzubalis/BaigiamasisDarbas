@@ -7,4 +7,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Agreements\" />
+    <Folder Include="Agreements\VolunteerAGR\" />
+    <Folder Include="Agreements\ParentAGR\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>

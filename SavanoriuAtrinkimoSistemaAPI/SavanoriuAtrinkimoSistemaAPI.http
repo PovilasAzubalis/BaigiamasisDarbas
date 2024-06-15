@@ -1,0 +1,6 @@
+@SavanoriuAtrinkimoSistemaAPI_HostAddress = http://localhost:5039
+
+GET {{SavanoriuAtrinkimoSistemaAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
