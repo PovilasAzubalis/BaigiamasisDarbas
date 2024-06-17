@@ -20,6 +20,16 @@
             Age = (DateTime.Today - DateOfBirth).Days/365;
             
         }
+        public Candidate(int id, string? name, string? surname, int phoneNr, string? email, DateTime dateOfBirth)
+        {
+            ID = id;
+            Name = name;
+            Surname = surname;
+            PhoneNr = phoneNr;
+            Email = email;
+            DateOfBirth = dateOfBirth;
+            Age = (DateTime.Today - DateOfBirth).Days / 365;
+        }
 
 
     }

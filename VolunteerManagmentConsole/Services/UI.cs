@@ -1,6 +1,6 @@
-﻿
-using Serilog;
+﻿using Serilog;
 using VolunteerManagmentConsole.Database_Repository;
+using VolunteerManagmentConsole.Models;
 namespace VolunteerManagmentConsole.Services
 {
     public class UI
@@ -26,11 +26,11 @@ namespace VolunteerManagmentConsole.Services
 
             while (inputMenuCheck == true)
             {
-                Menu(ref inputMenu, ref managmentService, ref IdatabaseRepository);
+                Menu(ref inputMenu, ref managmentService, IdatabaseRepository);
                 Console.WriteLine();
                 MenuText();
                 MenuInputCheck(out inputMenuCheck, out inputMenu);
-                
+
             }
 
 
@@ -45,13 +45,13 @@ namespace VolunteerManagmentConsole.Services
         {
             Console.WriteLine("| MENU |");
             Console.WriteLine("1 - Prideti kandidata.");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
+            Console.WriteLine("2 - Koreguoti kandidato informacija.");
+            Console.WriteLine("3 - Pakeisti kandidato duomenis.");
+            Console.WriteLine("4 - Istrinti kandidata.");
             Console.WriteLine("");
             Console.WriteLine("0 - Baigti darba.");
         }
-        public static void Menu(ref int inputMenu, ref ManagmentService managmentService, ref IDatabaseRepository IdatabaseRepository)
+        public static void Menu(ref int inputMenu, ref ManagmentService managmentService, IDatabaseRepository databaseRepository)
         {
             switch (inputMenu)
             {
@@ -59,16 +59,16 @@ namespace VolunteerManagmentConsole.Services
                     Environment.Exit(0);
                     break;
                 case 1:
-                    IdatabaseRepository.AddCandidate(managmentService.CreateCandidate(), managmentService.CreateDetails(), managmentService.CreateDocuments(), managmentService.CreateVolunteer());
+                    VolunteerData volunteerData = managmentService.CreateVolunteerData();
+                    databaseRepository.AddCandidate(volunteerData);// ar  case'ai 1 ir 2 vienodai korektiski ar 1 reikia perkelti 63 eilute i managmentService, kaip funkcija
                     break;
                 case 2:
-                    
+                    managmentService.UpdateVolunteer();
                     break;
                 case 3:
-
                     break;
                 case 4:
-
+                    managmentService.DeleteCandidate();
                     break;
                 case 9:
 

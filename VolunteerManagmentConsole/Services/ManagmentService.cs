@@ -1,13 +1,12 @@
-﻿using Microsoft.Identity.Client;
-using Serilog;
+﻿using Serilog;
 using System.Text.RegularExpressions;
 using VolunteerManagmentConsole.Database_Repository;
-using VolunteerManagmentLibrary.Interfaces;
+using VolunteerManagmentConsole.Models;
 using VolunteerManagmentLibrary.Models;
 
 namespace VolunteerManagmentConsole.Services
 {
-    public class ManagmentService : ICandidate, IDocuments, IDetails, IVolunteer    //ImanagmentService = visi Modelinterface
+    public class ManagmentService : IManagmentService    //ImanagmentService = visi Modelinterface
     {
         private readonly IDatabaseRepository _databaseRepository;
         public ManagmentService(IDatabaseRepository databaseRepository)
@@ -95,10 +94,50 @@ namespace VolunteerManagmentConsole.Services
             Volunteer volunteer = new Volunteer();
             return volunteer;
         }
-
-        public void CreateCandidate(Candidate candidate)
+        public VolunteerData CreateVolunteerData()
         {
-            throw new NotImplementedException();
+            VolunteerData volunteerData = new VolunteerData(CreateCandidate(), CreateDetails(), CreateDocuments(), CreateVolunteer());
+            return volunteerData;
         }
+        public void UpdateVolunteer()
+        {
+        IDCheck:
+            Console.Write("Iveskite savanorio ID: ");
+            int id;
+            try
+            {
+                id = int.Parse(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                goto IDCheck;
+            }
+
+            Candidate candidate = CreateCandidate();
+            VolunteerData volunteerData = new VolunteerData(candidate);
+            volunteerData.CandidateObj.ID = id;
+            _databaseRepository.UpdateCandidate(volunteerData);
+        }
+        public void DeleteCandidate()
+        {
+            
+        IDCheck:
+            Console.Write("Iveskite savanorio ID: ");
+            int id;
+            try
+            {
+                id = int.Parse(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                goto IDCheck;
+            }
+            VolunteerData volunteerData = new VolunteerData(id);
+            _databaseRepository.DeleteCandidate(volunteerData);
+        }
+
+
     }
 }
