@@ -22,8 +22,6 @@
   <ItemGroup>
     <Folder Include="Agreements\ParentAGR\" />
     <Folder Include="Agreements\VolunteerAGR\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
     <Folder Include="Users\" />
   </ItemGroup>
 

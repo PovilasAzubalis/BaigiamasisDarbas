@@ -11,7 +11,7 @@ namespace VolunteerManagmentAPI.Controllers
     public class EmailController : ControllerBase
     {
         [HttpPost]
-        public IActionResult SendEmail(string body)
+        public IActionResult AddCandidate(string body)
         {
             return null;
         }

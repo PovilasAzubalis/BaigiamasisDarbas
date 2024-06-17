@@ -1,0 +1,35 @@
+CREATE TABLE Candidates(
+ID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+[Name] NVARCHAR(32),
+[Surname] NVARCHAR(32),
+PhoneNr CHAR(9),
+Email NVARCHAR(100),
+DateOfBirth DATE,
+Age TINYINT);
+
+CREATE TABLE Volunteers(
+ID INT,
+GetAGR NVARCHAR(5),
+GetParentAGR NVARCHAR(5),
+[Availability] NVARCHAR(5)
+FOREIGN KEY (ID) REFERENCES Candidates(ID));
+
+CREATE TABLE Documents (
+ID INT,
+ParentAGRStatus NVARCHAR(32),
+ParentAGRDate DATE,
+AGRStatus NVARCHAR(32),
+AGR DATE,
+FOREIGN KEY (ID) REFERENCES Candidates(ID)); 
+
+CREATE TABLE Details(
+ID INT,
+Comments NVARCHAR(400),
+Allergies NVARCHAR(50),
+CommentsORG NVARCHAR(200),
+FOREIGN KEY (ID) REFERENCES Candidates(ID));
+
+USE VolunteerDB_ADONET
+ALTER TABLE Volunteers 
+ALTER COLUMN [Availability] INT;
+

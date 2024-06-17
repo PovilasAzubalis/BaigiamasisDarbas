@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using VolunteerManagmentLibrary.Constants;
 
 namespace VolunteerManagmentLibrary.Models
 {
     public class Documents
     {
         public int ID { get; set; }
+        // AGR - agreement
         public string? ParentAGRStatus { get; set; }
-        public DateOnly PartentAGRDate { get; set; }
+        public DateTime ParentAGRDate { get; set; }
         public string? AGRStatus { get; set; }
-        public DateOnly AGRDate { get; set; }
+        public DateTime AGRDate { get; set; }
+
+        public Documents()
+        {
+            ParentAGRStatus = AgreementStatus.NS;
+            ParentAGRDate = DateTime.Today;
+
+            AGRStatus = AgreementStatus.NS;
+            AGRDate = DateTime.Today;
+        }
     }
 }

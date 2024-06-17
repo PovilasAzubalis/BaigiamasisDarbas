@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolunteerManagmentAPI", "SavanoriuAtrinkimoSistemaAPI\VolunteerManagmentAPI.csproj", "{4F5847EA-9568-4C76-A142-1A2DD848C7F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolunteerManagmentLibrary", "VolunteerLibrary\VolunteerManagmentLibrary.csproj", "{D932E991-9A5D-436A-BF70-401FC3283D81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolunteerManagmentLibrary", "VolunteerLibrary\VolunteerManagmentLibrary.csproj", "{D932E991-9A5D-436A-BF70-401FC3283D81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolunteerManagmentConsole", "VolunteerManagmentConsole\VolunteerManagmentConsole.csproj", "{DD75AF66-96E0-42FF-BD92-DE4904A75C68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D932E991-9A5D-436A-BF70-401FC3283D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D932E991-9A5D-436A-BF70-401FC3283D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D932E991-9A5D-436A-BF70-401FC3283D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD75AF66-96E0-42FF-BD92-DE4904A75C68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD75AF66-96E0-42FF-BD92-DE4904A75C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD75AF66-96E0-42FF-BD92-DE4904A75C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD75AF66-96E0-42FF-BD92-DE4904A75C68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

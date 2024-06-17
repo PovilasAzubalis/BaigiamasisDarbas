@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VolunteerLibrary\VolunteerManagmentLibrary.csproj" />
+    <ProjectReference Include="..\VolunteerManagmentConsole\VolunteerManagmentConsole.csproj" />
   </ItemGroup>
 
 </Project>
