@@ -1,11 +1,13 @@
-﻿using System.Text.RegularExpressions;
+﻿using Microsoft.Identity.Client;
+using Serilog;
+using System.Text.RegularExpressions;
 using VolunteerManagmentConsole.Database_Repository;
 using VolunteerManagmentLibrary.Interfaces;
 using VolunteerManagmentLibrary.Models;
 
 namespace VolunteerManagmentConsole.Services
 {
-    public class ManagmentService : ICandidate, IDocuments, IDetails, IVolunteer
+    public class ManagmentService : ICandidate, IDocuments, IDetails, IVolunteer    //ImanagmentService = visi Modelinterface
     {
         private readonly IDatabaseRepository _databaseRepository;
         public ManagmentService(IDatabaseRepository databaseRepository)
@@ -70,6 +72,7 @@ namespace VolunteerManagmentConsole.Services
 
 
             Candidate candidate = new Candidate(name, surname, phoneNr, email, DOB);
+            Log.Information("Candidate Created");
             return candidate;
         }
         public Documents CreateDocuments()
@@ -91,6 +94,11 @@ namespace VolunteerManagmentConsole.Services
         {
             Volunteer volunteer = new Volunteer();
             return volunteer;
+        }
+
+        public void CreateCandidate(Candidate candidate)
+        {
+            throw new NotImplementedException();
         }
     }
 }

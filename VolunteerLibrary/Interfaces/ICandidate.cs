@@ -4,6 +4,6 @@ namespace VolunteerManagmentLibrary.Interfaces
 {
     public interface ICandidate
     {
-        Candidate CreateCandidate();
+        void CreateCandidate(Candidate candidate);
     }
 }

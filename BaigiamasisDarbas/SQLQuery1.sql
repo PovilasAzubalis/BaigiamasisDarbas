@@ -29,7 +29,10 @@ Allergies NVARCHAR(50),
 CommentsORG NVARCHAR(200),
 FOREIGN KEY (ID) REFERENCES Candidates(ID));
 
-USE VolunteerDB_ADONET
-ALTER TABLE Volunteers 
-ALTER COLUMN [Availability] INT;
-
+USE VolunteerDB_Dapper
+SELECT ID, [Name], [Surname] FROM Candidates
+USE VolunteerDB_Dapper
+SELECT * FROM Details
+SELECT * FROM Documents
+SELECT * FROM Volunteers
+DELETE FROM Candidates

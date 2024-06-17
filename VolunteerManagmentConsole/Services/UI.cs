@@ -1,4 +1,6 @@
-﻿using VolunteerManagmentConsole.Database_Repository;
+﻿
+using Serilog;
+using VolunteerManagmentConsole.Database_Repository;
 namespace VolunteerManagmentConsole.Services
 {
     public class UI
@@ -8,6 +10,12 @@ namespace VolunteerManagmentConsole.Services
             //string mainString = "C:\\Users\\azuba\\source\\repos\\BaigiamasisDarbas\\VolunteerManagmentConsole\\Database_Repository";
             // string connectionString = "Default" <-appsettings
             //StreamReader if file lines > 10 000
+            Log.Logger = new LoggerConfiguration()
+           .MinimumLevel.Debug()
+           .WriteTo.Console()
+           .WriteTo.File("logs/myapp.txt", rollingInterval: RollingInterval.Day)
+           .CreateLogger();
+
             string connectionString = "Data Source=DESKTOP-6FFNPQ7;Initial Catalog=VolunteerDB_Dapper;Integrated Security=True;Encrypt=False";
 
             IDatabaseRepository IdatabaseRepository = new DatabaseRepository(connectionString);
@@ -22,6 +30,7 @@ namespace VolunteerManagmentConsole.Services
                 Console.WriteLine();
                 MenuText();
                 MenuInputCheck(out inputMenuCheck, out inputMenu);
+                
             }
 
 

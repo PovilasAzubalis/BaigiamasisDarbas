@@ -1,5 +1,8 @@
 using VolunteerManagmentConsole.Database_Repository;
 using VolunteerManagmentConsole.Services;
+using VolunteerManagmentLibrary.Models;
+using VolunteerManagmentLibrary.Interfaces;
+using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,9 +11,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddTransient<IDatabaseRepository, DatabaseRepository>(_ => new DatabaseRepository("Data Source=DESKTOP-6FFNPQ7;Initial Catalog=VolunteerDB_Dapper;Integrated Security=True;Encrypt=False"));
-builder.Services.AddTransient<ManagmentService>();
-
+builder.Services.AddSingleton<ICandidate, ManagmentService>();
+builder.Services.AddSingleton<IDetails, ManagmentService>();
+builder.Services.AddSingleton<IDocuments, ManagmentService>();
+builder.Services.AddSingleton<IVolunteer, ManagmentService>();
 builder.Services.AddSwaggerGen();
+
+
 
 var app = builder.Build();
 
