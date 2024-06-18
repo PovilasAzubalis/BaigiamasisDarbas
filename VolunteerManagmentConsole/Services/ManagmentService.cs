@@ -99,6 +99,10 @@ namespace VolunteerManagmentConsole.Services
             VolunteerData volunteerData = new VolunteerData(CreateCandidate(), CreateDetails(), CreateDocuments(), CreateVolunteer());
             return volunteerData;
         }
+        public void AddVolunteer(VolunteerData volunteerData)
+        {
+            _databaseRepository.AddCandidate(volunteerData);
+        }
         public void UpdateVolunteer()
         {
         IDCheck:
@@ -121,7 +125,7 @@ namespace VolunteerManagmentConsole.Services
         }
         public void DeleteCandidate()
         {
-            
+
         IDCheck:
             Console.Write("Iveskite savanorio ID: ");
             int id;

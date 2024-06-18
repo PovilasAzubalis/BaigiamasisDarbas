@@ -26,7 +26,7 @@ namespace VolunteerManagmentConsole.Services
 
             while (inputMenuCheck == true)
             {
-                Menu(ref inputMenu, ref managmentService, IdatabaseRepository);
+                Menu(ref inputMenu, ref managmentService);
                 Console.WriteLine();
                 MenuText();
                 MenuInputCheck(out inputMenuCheck, out inputMenu);
@@ -51,7 +51,7 @@ namespace VolunteerManagmentConsole.Services
             Console.WriteLine("");
             Console.WriteLine("0 - Baigti darba.");
         }
-        public static void Menu(ref int inputMenu, ref ManagmentService managmentService, IDatabaseRepository databaseRepository)
+        public static void Menu(ref int inputMenu, ref ManagmentService managmentService)
         {
             switch (inputMenu)
             {
@@ -60,7 +60,7 @@ namespace VolunteerManagmentConsole.Services
                     break;
                 case 1:
                     VolunteerData volunteerData = managmentService.CreateVolunteerData();
-                    databaseRepository.AddCandidate(volunteerData);// ar  case'ai 1 ir 2 vienodai korektiski ar 1 reikia perkelti 63 eilute i managmentService, kaip funkcija
+                    managmentService.AddVolunteer(volunteerData);
                     break;
                 case 2:
                     managmentService.UpdateVolunteer();

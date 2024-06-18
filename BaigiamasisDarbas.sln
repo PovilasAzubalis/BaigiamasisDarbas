@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolunteerManagmentAPI", "Sa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolunteerManagmentLibrary", "VolunteerLibrary\VolunteerManagmentLibrary.csproj", "{D932E991-9A5D-436A-BF70-401FC3283D81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolunteerManagmentConsole", "VolunteerManagmentConsole\VolunteerManagmentConsole.csproj", "{DD75AF66-96E0-42FF-BD92-DE4904A75C68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolunteerManagmentConsole", "VolunteerManagmentConsole\VolunteerManagmentConsole.csproj", "{DD75AF66-96E0-42FF-BD92-DE4904A75C68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaigiamasisDarbas.Tests", "BaigiamasisDarbas.Tests\BaigiamasisDarbas.Tests.csproj", "{E539BB4C-3E7A-4AEC-9192-6992A24C9641}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{DD75AF66-96E0-42FF-BD92-DE4904A75C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD75AF66-96E0-42FF-BD92-DE4904A75C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD75AF66-96E0-42FF-BD92-DE4904A75C68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E539BB4C-3E7A-4AEC-9192-6992A24C9641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E539BB4C-3E7A-4AEC-9192-6992A24C9641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E539BB4C-3E7A-4AEC-9192-6992A24C9641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E539BB4C-3E7A-4AEC-9192-6992A24C9641}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
