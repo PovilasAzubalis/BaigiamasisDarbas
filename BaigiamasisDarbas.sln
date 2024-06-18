@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaigiamasisDarbas", "BaigiamasisDarbas\BaigiamasisDarbas.csproj", "{E40C6441-2670-49B5-9628-6709B55CE3F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolunteerManagmentAPI", "SavanoriuAtrinkimoSistemaAPI\VolunteerManagmentAPI.csproj", "{4F5847EA-9568-4C76-A142-1A2DD848C7F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolunteerManagmentLibrary", "VolunteerLibrary\VolunteerManagmentLibrary.csproj", "{D932E991-9A5D-436A-BF70-401FC3283D81}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolunteerManagmentConsole", "VolunteerManagmentConsole\VolunteerManagmentConsole.csproj", "{DD75AF66-96E0-42FF-BD92-DE4904A75C68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaigiamasisDarbas.Tests", "BaigiamasisDarbas.Tests\BaigiamasisDarbas.Tests.csproj", "{E539BB4C-3E7A-4AEC-9192-6992A24C9641}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E40C6441-2670-49B5-9628-6709B55CE3F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E40C6441-2670-49B5-9628-6709B55CE3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E40C6441-2670-49B5-9628-6709B55CE3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E40C6441-2670-49B5-9628-6709B55CE3F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F5847EA-9568-4C76-A142-1A2DD848C7F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F5847EA-9568-4C76-A142-1A2DD848C7F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F5847EA-9568-4C76-A142-1A2DD848C7F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F5847EA-9568-4C76-A142-1A2DD848C7F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D932E991-9A5D-436A-BF70-401FC3283D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D932E991-9A5D-436A-BF70-401FC3283D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D932E991-9A5D-436A-BF70-401FC3283D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D932E991-9A5D-436A-BF70-401FC3283D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD75AF66-96E0-42FF-BD92-DE4904A75C68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD75AF66-96E0-42FF-BD92-DE4904A75C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD75AF66-96E0-42FF-BD92-DE4904A75C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD75AF66-96E0-42FF-BD92-DE4904A75C68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E539BB4C-3E7A-4AEC-9192-6992A24C9641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E539BB4C-3E7A-4AEC-9192-6992A24C9641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E539BB4C-3E7A-4AEC-9192-6992A24C9641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E539BB4C-3E7A-4AEC-9192-6992A24C9641}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
