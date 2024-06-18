@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using VolunteerManagmentConsole.Models;
-using VolunteerManagmentLibrary.Models;
 
 namespace VolunteerManagmentConsole.Database_Repository
 {
@@ -21,17 +20,35 @@ namespace VolunteerManagmentConsole.Database_Repository
                 // neveikia ID scalar lentelems (Id foreign keys null)
                 //Candidate(name, surname, phoneNr, email, DOB)
                 const string sql = @"INSERT INTO Candidates (Name, Surname, PhoneNr, Email, DateOfBirth, Age) VALUES (@Name, @Surname, @PhoneNr, @Email, @DateOfBirth, @Age); SELECT CAST(SCOPE_IDENTITY() as int);";
-                const string sql1 = @"INSERT INTO Details (Comments, Allergies, CommentsORG) VALUES (@Comments, @Allergies, @CommentsORG);";
-                const string sql2 = @"INSERT INTO Documents (ParentAGRStatus, ParentAGRDate, AGRStatus, AGRDate) VALUES (@ParentAGRStatus, @ParentAGRDate, @AGRStatus, @AGRDate);";
+                const string sql1 = @"INSERT INTO Details (ID,Comments, Allergies, CommentsORG) VALUES (@Id, @Comments, @Allergies, @CommentsORG);";
+                const string sql2 = @"INSERT INTO Documents (ID, ParentAGRStatus, ParentAGRDate, AGRStatus, AGRDate) VALUES (@Id, @ParentAGRStatus, @ParentAGRDate, @AGRStatus, @AGRDate);";
                 const string sql3 = @"INSERT INTO Volunteers (GetParentAGR, GetAGR, Availability) VALUES (@ParentAGR, @AGR, @Available);";
 
                 volunteerData.CandidateObj.ID = db.ExecuteScalar<int>(sql, volunteerData.CandidateObj);
-                db.Execute(sql1, volunteerData.DetailsObj);
-                db.Execute(sql2, volunteerData.DocumentsObj);
-                db.Execute(sql3, volunteerData.VolunteerObj);
+                db.Execute(sql1, new
+                {
+                    ID = volunteerData.CandidateObj.ID,
+                    Comments = volunteerData.DetailsObj.Comments,
+                    Allergies = volunteerData.DetailsObj.Allergies,
+                    CommentsORG = volunteerData.DetailsObj.CommentsOrg
+                });
+                db.Execute(sql2, new
+                {
+                    ID = volunteerData.CandidateObj.ID,
+                    ParentAGRStatus = volunteerData.DocumentsObj.ParentAGRStatus,
+                    ParentAGRDate = volunteerData.DocumentsObj.ParentAGRDate,
+                    AGRStatus = volunteerData.DocumentsObj.AGRStatus,
+                    AGRDate = volunteerData.DocumentsObj.AGRDate
+                });
+                db.Execute(sql3, new
+                {
+                    ID = volunteerData.CandidateObj.ID,
+                    GetParentAGR = volunteerData.VolunteerObj.ParentAGR,
+                    GetAGR = volunteerData.VolunteerObj.AGR,
+                    Availability = volunteerData.VolunteerObj.Available
+                });
             }
         }
-
         public void AddVolunteerToTeam(VolunteerData volunteerData)
         {
             throw new NotImplementedException();

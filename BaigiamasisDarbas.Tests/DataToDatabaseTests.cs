@@ -10,7 +10,7 @@ namespace BaigiamasisDarbas.Tests
         IManagmentService? managmentService;
         IDatabaseRepository? databaseRepository;
         [Fact]
-        public void IdTransfer_bool_true()
+        public void CandidateObjCreationCheck_True()
         {
             //Arange
             ManagmentService managmentService = new ManagmentService(databaseRepository);
@@ -19,13 +19,11 @@ namespace BaigiamasisDarbas.Tests
             Documents documents = new Documents();
             Volunteer volunteer = new Volunteer();
             VolunteerData volunteerData = new VolunteerData(candidate, details, documents, volunteer);
-            volunteerData.CandidateObj.ID = 100;
 
             //Act
-            int result = volunteerData.CandidateObj.ID;
+            Candidate resultCandidate = candidate;
             // Assert
-            // neveikia... nors Candidate.ID gauna, priskirimas klaseje neveikia
-            Assert.Equal(result, volunteerData.DetailsObj.ID);
+            Assert.Equal(resultCandidate, volunteerData.CandidateObj);
         }
     }
 }

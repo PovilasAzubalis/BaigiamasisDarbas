@@ -3,9 +3,11 @@ using VolunteerManagmentLibrary.Interfaces;
 
 namespace VolunteerManagmentConsole.Services
 {
-    public interface IManagmentService : ICandidate, IDetails, IDocuments, IVolunteer
+    public interface IManagmentService
     {
-        public VolunteerData CreateVolunteerData();
+        void AddVolunteer(VolunteerData volunteerData);
+        void UpdateVolunteer(VolunteerData volunteerData);
+        void DeleteCandidate(VolunteerData volunteerData);
 
     }
 }
